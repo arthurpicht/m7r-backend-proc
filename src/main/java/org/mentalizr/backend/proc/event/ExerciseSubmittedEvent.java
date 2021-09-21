@@ -4,19 +4,19 @@ import org.bson.Document;
 import org.mentalizr.persistence.mongo.exerciseStatus.ExerciseStatusSubmitted;
 import org.mentalizr.persistence.mongo.exerciseStatus.ExerciseStatusSubmittedConverter;
 import org.mentalizr.persistence.mongo.exerciseStatus.ExerciseStatusSubmittedMongoHandler;
-import org.mentalizr.persistence.mongo.formData.FormData;
+import org.mentalizr.serviceObjects.frontend.patient.formData.FormDataSO;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 public class ExerciseSubmittedEvent extends Event {
 
-    private static Logger logger = LoggerFactory.getLogger(ExerciseSubmittedEvent.class);
+    private static final Logger logger = LoggerFactory.getLogger(ExerciseSubmittedEvent.class);
 
-    private ExerciseStatusSubmitted exerciseStatusSubmitted;
+    private final ExerciseStatusSubmitted exerciseStatusSubmitted;
 
-    public ExerciseSubmittedEvent(FormData formData) {
+    public ExerciseSubmittedEvent(FormDataSO formDataSO) {
         super();
-        this.exerciseStatusSubmitted = new ExerciseStatusSubmitted(formData.getUserId(), formData.getContentId());
+        this.exerciseStatusSubmitted = new ExerciseStatusSubmitted(formDataSO.getUserId(), formDataSO.getContentId());
     }
 
     @Override
