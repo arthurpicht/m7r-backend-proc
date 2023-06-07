@@ -19,5 +19,5 @@ repositories {
 dependencies {
     implementation 'org.mentalizr:m7r-persistence-mongo:1.0-SNAPSHOT'
     implementation 'org.mentalizr:m7r-service-objects:0.0.1-SNAPSHOT'
-    implementation 'ch.qos.logback:logback-classic:1.2.7'
+    implementation 'ch.qos.logback:logback-classic:1.4.7'
 }
